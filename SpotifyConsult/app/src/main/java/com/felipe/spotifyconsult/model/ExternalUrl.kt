@@ -8,4 +8,11 @@ class ExternalUrl {
     private var key: String = ""
     @SerializedName("value")
     private var value: String = ""
+
+    override fun toString(): String {
+        return "ExternalUrl(key='$key', " +
+                "value='$value')"
+    }
+
+
 }

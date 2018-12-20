@@ -10,4 +10,12 @@ class UserImage {
     private var url: String = ""
     @SerializedName("width")
     private var width: Int? = null
+
+    override fun toString(): String {
+        return "UserImage(height=$height, " +
+                "url='$url', " +
+                "width=$width)"
+    }
+
+
 }

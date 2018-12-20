@@ -14,8 +14,8 @@ class ProfileApi {
         val instance: ProfileApi by lazy { ProfileApi() }
     }
 
-    fun getCurrentProfile(profileListener: ProfileListener): Profile {
-        val service: ProfileService = RetrofitInitializer.createService(ProfileService::class.java)
+    fun getCurrentProfile(profileListener: ProfileListener, token: String): Profile {
+        val service: ProfileService = RetrofitInitializer.createService(ProfileService::class.java, token)
         val call: Call<Profile> = service.getCurrentProfile()
 
         call.enqueue(object : Callback<Profile> {

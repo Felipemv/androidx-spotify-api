@@ -8,4 +8,11 @@ class Followers {
     private var href: String = ""
     @SerializedName("total")
     private var total: Int = 0
+
+    override fun toString(): String {
+        return "Followers(href='$href', " +
+                "total=$total)"
+    }
+
+
 }

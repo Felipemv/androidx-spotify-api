@@ -28,4 +28,18 @@ class Profile {
     @SerializedName("uri")
     private var uri: String? = ""
 
+    override fun toString(): String {
+        return "Profile(birthdate='$birthdate', " +
+                "country='$country', " +
+                "displayName='$displayName', " +
+                "email='$email', " +
+                "externalUrls=$externalUrls, " +
+                "followers=$followers, " +
+                "href=$href, " +
+                "id=$id, " +
+                "images=$images, " +
+                "product=$product, " +
+                "type=$type, " +
+                "uri=$uri)"
+    }
 }
