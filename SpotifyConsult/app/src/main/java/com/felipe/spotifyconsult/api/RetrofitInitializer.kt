@@ -5,12 +5,16 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitInitializer {
 
-    private val BASE_URL = "https://api.spotify.com/v1"
+    companion object {
+        private val BASE_URL = "https://api.spotify.com/v1/"
 
-    fun init() {
-        Retrofit.Builder()
+        val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+
+        fun <S> createService(serviceClass: Class<S>): S {
+            return retrofit.create(serviceClass)
+        }
     }
 }
