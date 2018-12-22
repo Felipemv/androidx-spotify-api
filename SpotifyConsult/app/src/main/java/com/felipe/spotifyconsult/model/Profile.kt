@@ -20,7 +20,7 @@ class Profile {
     @SerializedName("id")
     private var id: String? = ""
     @SerializedName("images")
-    private var images: ArrayList<UserImage>? = null
+    private var images: ArrayList<Image>? = null
     @SerializedName("product")
     private var product: String? = ""
     @SerializedName("type")
