@@ -1,13 +1,17 @@
 package com.felipe.spotifyconsult
 
 import android.content.Intent
+import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.felipe.spotifyconsult.api.EResponseStatus
 import com.felipe.spotifyconsult.api.endpoints.ProfileApi
+import com.felipe.spotifyconsult.database.SpotifyConsultDb
 import com.felipe.spotifyconsult.listeners.ProfileListener
 import com.felipe.spotifyconsult.model.Profile
+import com.felipe.spotifyconsult.model.entity.UserAuth
 import com.felipe.spotifyconsult.spotify.config.ConfigurateCredentials
 import com.spotify.sdk.android.authentication.AuthenticationClient
 import com.spotify.sdk.android.authentication.AuthenticationResponse
@@ -18,8 +22,7 @@ class MainActivity : AppCompatActivity(), ProfileListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var credentials: ConfigurateCredentials = ConfigurateCredentials()
-        credentials.authenticateUser(this)
+        ConfigurateCredentials().authenticateUser(this)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -32,8 +35,15 @@ class MainActivity : AppCompatActivity(), ProfileListener {
                 AuthenticationResponse.Type.TOKEN -> {
                     Toast.makeText(this, "Token: " + response.accessToken, Toast.LENGTH_SHORT).show()
 
-                    ProfileApi.instance.getCurrentProfile(this, response.accessToken)
-                    Log.i("profile_endpoint", response.accessToken)
+                    Thread {
+                        SpotifyConsultDb.getInstance(this).userAuthDAO().insert(UserAuth(response.accessToken))
+//                    ProfileApi.instance.getCurrentProfile(this, response.accessToken)
+                        Log.i(
+                            "profile_endpoint",
+                            SpotifyConsultDb.getInstance(this).userAuthDAO().getAll()[0].token
+                        )
+                    }.start()
+
                 }
 
                 AuthenticationResponse.Type.ERROR -> {
@@ -47,11 +57,20 @@ class MainActivity : AppCompatActivity(), ProfileListener {
         }
     }
 
-    override fun onCurrentProfileLoaded(profile: Profile) {
+    override fun onCurrentProfileLoaded(profile: Profile, code: EResponseStatus) {
         Log.i("profile_endpoint", profile.toString())
     }
 
     override fun onCurrentProfileFailed() {
         Log.i("profile_endpoint", "Could not read profile")
     }
+
+    override fun onProfileLoadedById(profile: Profile, code: EResponseStatus) {
+        Log.i("profile_endpoint", profile.toString())
+    }
+
+    override fun onProfileFailedById() {
+        Log.i("profile_endpoint", "Could not read profile")
+    }
+
 }
