@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">SpotifyConsult</string>
+    <string name="spotify">Spotify</string>
+    <string name="consult">Consult</string>
+    <string name="powered_by_felipe_martins">\@Powered by Felipe Martins</string>
 </resources>
