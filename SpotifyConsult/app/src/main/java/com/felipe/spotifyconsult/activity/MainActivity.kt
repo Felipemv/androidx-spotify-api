@@ -32,15 +32,10 @@ class MainActivity : AppCompatActivity(), ProfileListener {
 
             when (response.type) {
                 AuthenticationResponse.Type.TOKEN -> {
-                    Toast.makeText(this, "Token: " + response.accessToken, Toast.LENGTH_SHORT).show()
-
                     Thread {
-                        SpotifyConsultDb.getInstance(this).userAuthDAO().insert(UserAuth(response.accessToken))
-//                    ProfileApi.instance.getCurrentProfile(this, response.accessToken)
-                        Log.i(
-                            "profile_endpoint",
-                            SpotifyConsultDb.getInstance(this).userAuthDAO().getAll()[0].token
-                        )
+                        var userAuth: UserAuth = UserAuth(response.accessToken, response.expiresIn)
+                        SpotifyConsultDb.getInstance(this).userAuthDAO().insert(userAuth)
+
                     }.start()
 
                 }
