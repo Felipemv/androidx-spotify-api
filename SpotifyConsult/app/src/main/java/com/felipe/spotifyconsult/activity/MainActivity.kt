@@ -1,13 +1,12 @@
-package com.felipe.spotifyconsult
+package com.felipe.spotifyconsult.activity
 
 import android.content.Intent
-import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.felipe.spotifyconsult.R
 import com.felipe.spotifyconsult.api.EResponseStatus
-import com.felipe.spotifyconsult.api.endpoints.ProfileApi
 import com.felipe.spotifyconsult.database.SpotifyConsultDb
 import com.felipe.spotifyconsult.listeners.ProfileListener
 import com.felipe.spotifyconsult.model.Profile
