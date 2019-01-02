@@ -15,7 +15,7 @@ class SplashActivity : AppCompatActivity(), Runnable {
         setContentView(R.layout.activity_splash)
 
         handler = Handler()
-        handler!!.postDelayed(this, 3000)
+        handler!!.postDelayed(this, 1000)
     }
 
     override fun onDestroy() {

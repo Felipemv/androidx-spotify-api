@@ -18,7 +18,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="16dp"
-            app:layout_constraintVertical_bias="0.269" android:id="@+id/imageView">
+            app:layout_constraintVertical_bias="0.269"
+            android:id="@+id/imageView">
     </ImageView>
 
     <TextView
@@ -30,7 +31,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             android:textSize="@dimen/spotify_splash"
-            android:fontFamily="" android:id="@+id/textView"
+            android:fontFamily=""
+            android:id="@+id/textView"
             app:layout_constraintHorizontal_bias="0.698"
             app:layout_constraintVertical_bias="1.0">
     </TextView>
@@ -46,17 +48,22 @@
             app:layout_constraintStart_toStartOf="@+id/imageView"
             android:layout_marginStart="8dp"
             app:layout_constraintHorizontal_bias="0.471"
-            android:textSize="@dimen/spotify_splash" android:id="@+id/textView2">
+            android:textSize="@dimen/spotify_splash"
+            android:id="@+id/textView2">
 
     </TextView>
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/powered_by_felipe_martins" android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" android:id="@+id/textView3"/>
+            android:text="@string/powered_by_felipe_martins"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            android:id="@+id/textView3"/>
 
     <ProgressBar android:layout_width="wrap_content"
                  android:layout_height="wrap_content"

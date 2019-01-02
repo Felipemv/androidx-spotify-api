@@ -3,4 +3,10 @@
     <string name="spotify">Spotify</string>
     <string name="consult">Consult</string>
     <string name="powered_by_felipe_martins">\@Powered by Felipe Martins</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="playlists">Playlists</string>
+    <string name="profile_name">Profile Name</string>
+    <string name="account_type">Account Type</string>
+
 </resources>
