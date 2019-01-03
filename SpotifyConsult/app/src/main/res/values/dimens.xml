@@ -8,4 +8,10 @@
 
     <dimen name="logo">100dp</dimen>
     <dimen name="spotify_splash">60sp</dimen>
+
+    <dimen name="text_view_title_text_size">20sp</dimen>
+    <dimen name="text_view_info_text_size">20sp</dimen>
+
+    <dimen name="text_view_title_padding">8dp</dimen>
+    <dimen name="text_view_info_padding">8dp</dimen>
 </resources>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".fragments.ProfileFragment"
+             android:layout_marginTop="16dp"
+             android:layout_marginBottom="16dp">
+
+    <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="16dp"
+            android:padding="8dp">
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <ImageView
+                        android:id="@+id/ivProfilePicture"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/ic_launcher"
+                        android:padding="4dp"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@mipmap/ic_launcher_round"
+                            android:layout_margin="16dp"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            android:textSize="38sp"
+                            android:text="@string/name"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        style="@style/profile_info">
+
+                    <ImageView
+                            style="@style/profile_info_icon"
+                            android:src="@drawable/ic_birthday"/>
+
+                    <TextView
+                            style="@style/text_view_info"
+                            android:text="@string/birthday"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        style="@style/profile_info">
+
+                    <ImageView
+                            style="@style/profile_info_icon"
+                            android:src="@drawable/ic_country"/>
+
+                    <TextView
+                            style="@style/text_view_info"
+                            android:text="@string/country"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        style="@style/profile_info">
+
+                    <ImageView
+                            style="@style/profile_info_icon"
+                            android:src="@drawable/ic_email"/>
+                    <TextView
+                            style="@style/text_view_info"
+                            android:text="@string/email"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        style="@style/profile_info">
+
+                    <ImageView
+                            style="@style/profile_info_icon"
+                            android:src="@drawable/ic_followers"/>
+
+                    <TextView
+                            style="@style/text_view_info"
+                            android:text="@string/followers"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        style="@style/profile_info">
+
+                    <ImageView
+                            style="@style/profile_info_icon"
+                            android:src="@drawable/ic_product"/>
+
+                    <TextView
+                            style="@style/text_view_info"
+                            android:text="@string/product"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

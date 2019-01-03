@@ -9,13 +9,14 @@ import com.felipe.spotifyconsult.R
 class SplashActivity : AppCompatActivity(), Runnable {
 
     var handler: Handler? = null
+    private val DELAY_TIME:Long = 500
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
         handler = Handler()
-        handler!!.postDelayed(this, 1000)
+        handler!!.postDelayed(this, DELAY_TIME)
     }
 
     override fun onDestroy() {
