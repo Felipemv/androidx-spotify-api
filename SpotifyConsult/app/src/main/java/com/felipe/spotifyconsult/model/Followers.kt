@@ -5,9 +5,10 @@ import com.google.gson.annotations.SerializedName
 class Followers {
 
     @SerializedName("href")
-    private var href: String = ""
+    var href: String = ""
+
     @SerializedName("total")
-    private var total: Int = 0
+    var total: Int = 0
 
     override fun toString(): String {
         return "Followers(href='$href', " +

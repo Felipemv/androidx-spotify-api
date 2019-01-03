@@ -18,7 +18,13 @@ enum class EResponseStatus(var value: Int) {
 
     companion object {
         fun from(value: Int): EResponseStatus {
-            return from(value)
+
+            for (v:EResponseStatus in values()) {
+                if (v.value == value) {
+                    return v
+                }
+            }
+            return INTERNAL_SERVER_ERROR
         }
     }
 }

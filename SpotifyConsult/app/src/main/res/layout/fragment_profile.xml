@@ -29,9 +29,9 @@
                     android:orientation="vertical">
 
                 <ImageView
-                        android:id="@+id/ivProfilePicture"
+                        android:id="@+id/ivProfilePictureLarge"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="200dp"
                         android:src="@mipmap/ic_launcher"
                         android:padding="4dp"/>
 
@@ -40,12 +40,14 @@
                         android:layout_height="match_parent">
 
                     <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/ivProfilePictureSmall"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:src="@mipmap/ic_launcher_round"
                             android:layout_margin="16dp"/>
 
                     <TextView
+                            android:id="@+id/tv_profile_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="16dp"
@@ -62,6 +64,7 @@
                             android:src="@drawable/ic_birthday"/>
 
                     <TextView
+                            android:id="@+id/tv_profile_birthdate"
                             style="@style/text_view_info"
                             android:text="@string/birthday"/>
 
@@ -75,6 +78,7 @@
                             android:src="@drawable/ic_country"/>
 
                     <TextView
+                            android:id="@+id/tv_profile_country"
                             style="@style/text_view_info"
                             android:text="@string/country"/>
                 </LinearLayout>
@@ -85,7 +89,9 @@
                     <ImageView
                             style="@style/profile_info_icon"
                             android:src="@drawable/ic_email"/>
+
                     <TextView
+                            android:id="@+id/tv_profile_email"
                             style="@style/text_view_info"
                             android:text="@string/email"/>
                 </LinearLayout>
@@ -98,6 +104,7 @@
                             android:src="@drawable/ic_followers"/>
 
                     <TextView
+                            android:id="@+id/tv_profile_followers"
                             style="@style/text_view_info"
                             android:text="@string/followers"/>
                 </LinearLayout>
@@ -110,6 +117,7 @@
                             android:src="@drawable/ic_product"/>
 
                     <TextView
+                            android:id="@+id/tv_profile_product"
                             style="@style/text_view_info"
                             android:text="@string/product"/>
                 </LinearLayout>

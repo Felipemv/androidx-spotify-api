@@ -21,7 +21,11 @@ class ProfileApi {
 
         call.enqueue(object : Callback<Profile> {
             override fun onResponse(call: Call<Profile>, response: Response<Profile>) {
-                profileListener.onCurrentProfileLoaded(response.body()!!, EResponseStatus.from(response.code()))
+                if(response.body() != null){
+                    profileListener.onCurrentProfileLoaded(response.body()!!, EResponseStatus.from(response.code()))
+                }else{
+                    profileListener.onCurrentProfileFailed()
+                }
             }
 
             override fun onFailure(call: Call<Profile>, t: Throwable) {

@@ -3,30 +3,42 @@ package com.felipe.spotifyconsult.model
 import com.google.gson.annotations.SerializedName
 
 class Profile {
+
     @SerializedName("birthdate")
-    private var birthdate: String = ""
+    var birthdate: String = ""
+
     @SerializedName("country")
-    private var country: String = ""
+    var country: String = ""
+
     @SerializedName("display_name")
-    private var displayName: String = ""
-    @SerializedName("string")
-    private var email: String = ""
+    var displayName: String = ""
+
+    @SerializedName("email")
+    var email: String = ""
+
     @SerializedName("external_urls")
-    private var externalUrls: ExternalUrl? = null
+    var externalUrls: ExternalUrl? = null
+
     @SerializedName("followers")
-    private var followers: Followers? = null
+    var followers: Followers? = null
+
     @SerializedName("href")
-    private var href: String? = ""
+    var href: String? = ""
+
     @SerializedName("id")
-    private var id: String? = ""
+    var id: String? = ""
+
     @SerializedName("images")
-    private var images: ArrayList<Image>? = null
+    var images: ArrayList<Image>? = null
+
     @SerializedName("product")
-    private var product: String? = ""
+    var product: String? = ""
+
     @SerializedName("type")
-    private var type: String? = ""
+    var type: String? = ""
+
     @SerializedName("uri")
-    private var uri: String? = ""
+    var uri: String? = ""
 
     override fun toString(): String {
         return "Profile(birthdate='$birthdate', " +
